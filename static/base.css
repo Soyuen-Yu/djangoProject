@@ -1,0 +1,16 @@
+.Bsky_logo {
+    font-family: 'Dancing Script', cursive;
+}
+.Bsky_footer_button{
+    font-size: 0.6rem;
+}
+
+.Bsky_footer{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.Bsky_header{
+    text-align: center;
+    margin: 2rem 0;
+}
