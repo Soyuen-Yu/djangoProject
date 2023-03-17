@@ -6,6 +6,16 @@
         <span>nav1</span>
         <span>nav2</span>
         <span>nav3</span>
-        <span>nav4</span>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+                <!--?next=={{request.path}} 구문을 통하여 login, logout을 하고난 뒤에 현재 페이지로 연결 할 수 있다.-->
+                <!--이전 페이지의 경로를 url뒤에 붙여서 연결해주는식 ex > account/login/?next=/account/hello_world/-->
+                <span>login</span>
+            </a>
+        {% else %}
+           <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+                <span>logout</span>
+            </a>
+        {% endif %}
     </div>
 </div>
