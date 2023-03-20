@@ -20,5 +20,29 @@
     <!--DEFAULT CSS LINK-->
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 
+    <!--Local Font-->
+    <style>
+        @font-face {
+            font-family: 'NanumSquareB.otf';
+            src: local('NanumSquareB),
+            url("{% static 'fonts/NanumSquareB.otf' %}") format("opentype");
+            }
+        @font-face {
+            font-family: 'NanumSquareEB.otf';
+            src: local('NanumSquareEB),
+            url("{% static 'fonts/NanumSquareEB.otf' %}") format("opentype");
+            }
+        @font-face {
+            font-family: 'NanumSquareL.otf';
+            src: local('NanumSquareL),
+            url("{% static 'fonts/NanumSquareL.otf' %}") format("opentype");
+            }
+        @font-face {
+            font-family: 'NanumSquareR.otf';
+            src: local('NanumSquareR),
+            url("{% static 'fonts/NanumSquareR.otf' %}") format("opentype");
+            }
+    </style>
+
 
 </head>
