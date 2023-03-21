@@ -12,7 +12,13 @@
                 <!--이전 페이지의 경로를 url뒤에 붙여서 연결해주는식 ex > account/login/?next=/account/hello_world/-->
                 <span>login</span>
             </a>
+            <a href="{% url 'accountapp:create' %}">
+                <span>SignUp</span>
+            </a>
         {% else %}
+            <a href="{% url 'accountapp:detail' pk=user.pk%}">
+                <span>MyPage</span>
+            </a>
            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
                 <span>logout</span>
             </a>
