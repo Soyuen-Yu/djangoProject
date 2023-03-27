@@ -8,9 +8,12 @@
         {{ targetUser.date_joined }}
       </p>
 
-      {% if target_user.profile %}
+      {% if targetUser.profile %}
         <h2 style="font-family: 'NanumSquareB'">
           {{ targetUser.profile.nickname }}
+          <a href="url 'profileapp:update' pk=target_user.profile.pk">
+            edit
+          </a>
         </h2>
       {% else %}
         <a href="{% url 'profileapp:create' %}">
