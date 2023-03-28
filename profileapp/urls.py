@@ -7,5 +7,5 @@ app_name = "profileapp" #appname을 명시하여 경로를 편리하게 설정�
 
 urlpatterns = [
     path('create/', ProfileCreateView.as_view(), name='create'),
-    path('update/', ProfileUpdateView.as_view(), name='update'),
+    path('update/<int:pk>', ProfileUpdateView.as_view(), name='update'),
 ]
