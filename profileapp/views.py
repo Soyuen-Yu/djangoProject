@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, UpdateView
 
+from profileapp.decorators import profile_ownership_decorator
 from profileapp.forms import ProfileCreationForm
 from profileapp.models import Profile
 import logging
@@ -25,6 +27,8 @@ class ProfileCreateView(CreateView):
         return super().form_valid(form)
 
 
+@method_decorator(profile_ownership_decorator, 'get')
+@method_decorator(profile_ownership_decorator, 'post')
 class ProfileUpdateView(UpdateView):
     model = Profile
     context_object_name = 'targetProfile'

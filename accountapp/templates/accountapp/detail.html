@@ -4,7 +4,9 @@
 
   <div>
     <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
-      <img src="{{targetUser.profile.image.url }}" alt="" style="height: 8rem; width: 8rem; border_radius: 10rem;">
+
+      <img src="{{ targetUser.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
+
       {% if targetUser.profile %}
         <h2 style="font-family: 'NanumSquareB'">
           {{ targetUser.profile.nickname }}
@@ -19,6 +21,10 @@
           </h2>
         </a>
       {% endif %}
+
+      <h5 style="margin-bottom: 3rem;">
+        {{ targetUser.profile.message }}
+      </h5>
 
         {% if targetUser == user %}
         <a href="{% url 'accountapp:update' pk=user.pk %}">
