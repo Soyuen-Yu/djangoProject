@@ -5,26 +5,30 @@
   <div>
     <div style="text-align: center; max-width: 500px; margin: 4rem auto;">
 
-      <img src="{{ targetUser.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
-
       {% if targetUser.profile %}
-        <h2 style="font-family: 'NanumSquareB'">
-          {{ targetUser.profile.nickname }}
+      <img src="{{ targetUser.profile.image.url }}" alt="" style="height: 10rem; width: 10rem; border-radius: 20rem; margin-bottom: 2rem;">
+      <h2 style="font-family: 'NanumSquareB'">
+        {{ targetUser.profile.nickname }}
+        {% if targetUser == user %}
           <a href="{% url 'profileapp:update' pk=targetUser.profile.pk %}">
             edit
           </a>
-        </h2>
+        {% endif %}
+      </h2>
+      <h5 style="margin-bottom: 3rem;">
+        {{ targetUser.profile.message }}
+      </h5>
       {% else %}
+      {% if targetUser == user %}
         <a href="{% url 'profileapp:create' %}">
           <h2 style="font-family: 'NanumSquareB'">
             Create Profile
           </h2>
         </a>
+      {% else %}
+      <h2> Unknown </h2>
       {% endif %}
-
-      <h5 style="margin-bottom: 3rem;">
-        {{ targetUser.profile.message }}
-      </h5>
+      {% endif %}
 
         {% if targetUser == user %}
         <a href="{% url 'accountapp:update' pk=user.pk %}">
