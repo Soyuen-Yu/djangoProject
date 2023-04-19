@@ -12,6 +12,10 @@
       <p>
         {{targetArticle.content}}
       </p>
+
+      <a href="{% url 'articleapp:update' pk=targetArticle.pk %}">
+        <p>Update Article</p>
+      </a>
     </div>
   </div>
 
